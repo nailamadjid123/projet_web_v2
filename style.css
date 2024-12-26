@@ -314,7 +314,7 @@ a:hover{
 
 .experience_header {
     font-size: 2.5em;
-    color: #333;
+    color: #23385C;
     margin-bottom: 40px;
 }
 
@@ -328,7 +328,7 @@ a:hover{
 }
 
 .experience_item {
-    background-color: #fff;
+    background-color: #007bff;
     border-radius: 8px;
     overflow: hidden;
     width: 30%;
@@ -336,13 +336,19 @@ a:hover{
     padding: 5px;
     margin-bottom: 5px;
     text-decoration: none;
-    color: inherit;
+    color: inherit; 
+    position: relative; 
 }
+
+
+
 
 .experience_img {
     width: 100%;
-    height: auto;
+    height: 300px;
     border-radius: 8px;
+    object-fit: cover; /* Gère l'ajustement des images sans distorsion */
+    position: relative; 
 }
 
 .experience_text {
@@ -356,7 +362,7 @@ a:hover{
 
 .experience_subtitle {
     font-size: 1em;
-    color: #666;
+    color: #484848;
     margin-top: 10px;
 }
 
@@ -384,4 +390,5 @@ a:hover{
         width: 80%;
     }
 }
+
 

@@ -1,26 +1,52 @@
-const destinations = [
-    { title: "Santorini", subtitle: "Bouatit, Travel", image: "C:/path/to/santorini.jpg" },
-    { title: "Paris", subtitle: "City of Lights", image: "C:/path/to/paris.jpg" },
-    { title: "Maldives", subtitle: "Tropical Paradise", image: "C:/path/to/maldives.jpg" },
-];
-
-const destinationList = document.getElementById("distinationList");
-
-destinations.forEach(destination => {
-    const item = `
-        <li class="distination_item">
-            <a href="#" class="distination_link">
-                <img src="${destination.image}" alt="${destination.title}" class="distination_img">
-                <div class="distination_text">
-                    <h3 class="distination_title">${destination.title}</h3>
-                    <p class="distination_subtitle">${destination.subtitle}</p>
-                </div>
-                <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-        </li>
-    `;
-    destinationList.innerHTML += item;
-});
-document.getElementById("myButton").addEventListener("click", function () {
-    alert("Bouton cliqué !");
-});
+// Attendre que le DOM soit chargé
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".carousel-image");
+    let currentIndex = 0;
+    let nextIndex = 0;
+    
+    // Afficher la première image au chargement
+    images[currentIndex].classList.add("active");
+    
+    function fadeOut(element) {
+        element.style.opacity = "1";
+        
+        let opacity = 1;
+        const timer = setInterval(() => {
+            if (opacity <= 0.1) {
+                clearInterval(timer);
+                element.style.opacity = "0";
+                element.classList.remove("active");
+            }
+            element.style.opacity = opacity;
+            opacity -= 0.1;
+        }, 50);
+    }
+    
+    function fadeIn(element) {
+        element.classList.add("active");
+        element.style.opacity = "0";
+        
+        let opacity = 0;
+        const timer = setInterval(() => {
+            if (opacity >= 1) {
+                clearInterval(timer);
+            }
+            element.style.opacity = opacity;
+            opacity += 0.1;
+        }, 50);
+    }
+    
+    function showNextImage() {
+        // Calculer l'index de la prochaine image
+        nextIndex = (currentIndex + 1) % images.length;
+        
+        // Fade out l'image courante
+        fadeOut(images[currentIndex]);
+        
+        // Fade in la prochaine image
+        setTimeout(() => {
+            fadeIn(images[nextIndex]);
+            currentIndex = nextIndex;
+        }, 500);
+   
+   
