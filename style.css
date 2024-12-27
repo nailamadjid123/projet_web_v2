@@ -317,15 +317,18 @@ a:hover{
     color: #23385C;
     margin-bottom: 40px;
 }
-
 .experience_list {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    list-style-type: none;
-    padding: 0;
-    flex-wrap: wrap;
+    display: flex;            /* Active Flexbox */
+    flex-wrap: wrap;        /* Empêche les éléments de passer à une nouvelle ligne */
+    overflow-x: auto;         /* Ajoute un défilement horizontal si nécessaire */
+    justify-content: space-between; /* Espace entre les éléments */
+    gap: 20px;                /* Espacement entre les éléments */
+    padding: 0;               /* Supprime les marges internes */
+    list-style-type: none;    /* Supprime les puces des listes */
 }
+
+
+
 
 .experience_item {
     background-color: #007bff;
@@ -343,12 +346,13 @@ a:hover{
 
 
 
+
 .experience_img {
     width: 100%;
     height: 300px;
     border-radius: 8px;
     object-fit: cover; /* Gère l'ajustement des images sans distorsion */
-    position: relative; 
+position:relative 
 }
 
 .experience_text {
@@ -379,6 +383,7 @@ a:hover{
     margin-left: 5px;
 }
 
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .experience_list {
@@ -391,4 +396,97 @@ a:hover{
     }
 }
 
+.explore-section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .map-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .map {
+    width: 100%;
+    height: auto;
+  }
+  
+  .location {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .material-symbols-outlined{
+      color: red;
+      border-radius: 50%;
+      transform: translate(-30%, -170%);
+  }
+  .adventure-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 50px;
+  }
 
+  /* Overlay pour améliorer la lisibilité du texte */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Superposition sombre pour améliorer la visibilité du texte */
+  }
+
+  /* Style pour le texte */
+  .adventure-text {
+    position: relative;
+    z-index: 2; /* Assurez-vous que le texte est au-dessus de l'overlay */
+  }
+
+  /* Animation du texte */
+  .adventure-section h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+  }
+
+  .adventure-section p {
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 1s;
+  }
+  .adventure-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;;
+    height:300px;
+    object-fit: cover;
+    filter: blur(0px); /* Pas de flou, essayez d'ajuster la valeur si nécessaire */
+  }
+  
+  /* Animation fadeInUp */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
