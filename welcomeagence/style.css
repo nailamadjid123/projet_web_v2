@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    background: linear-gradient(to bottom, #23385C, #4A76C2,#1BD1F9);
     color: white;
     text-align: center;
   }
@@ -26,7 +26,7 @@ body {
   
   h1 {
     margin-top: 50px;
-    font-size: 36px;
+    font-size: 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
@@ -38,7 +38,7 @@ body {
   .airplane-container {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 600px;
   }
   
   .path {
@@ -48,9 +48,9 @@ body {
   }
   
   .airplane {
-    position: absolute;
+    position: center;
     width: 700px;
-    animation: fly 4s ease-in-out forwards;
+    
   }
   
   .quote {
@@ -65,20 +65,14 @@ body {
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 .icon {
     width: 200px;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    
 }
 
-  @keyframes fly {
-    0% {
-      offset-distance: 0%;
-    }
-    100% {
-      offset-distance: 100%;
-    }
-  }
+ 
+  
   

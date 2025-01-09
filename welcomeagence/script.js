@@ -12,6 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Start animation
     setTimeout(() => {
       airplane.style.offsetDistance = "100%";
-    }, 500); // Delay to start animation
+    }, 900); // Delay to start animation
   });
   

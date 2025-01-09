@@ -1,0 +1,83 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #23385C, #4A76C2,#1BD1F9);
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  .airplane-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+  }
+  
+  .airplane {
+    width: 150px;
+    height: auto;
+    
+    position: absolute;
+    offset-path: path('M 0,200 C 100,100 300,50 600,100 S 900,200 1200,150');
+    offset-rotate: auto;
+    animation: fly 4s ease-in-out infinite;
+    filter: brightness(0) saturate(100%) invert(31%) sepia(47%) saturate(1098%) hue-rotate(197deg) brightness(91%) contrast(87%);
+
+  }
+  
+  @keyframes fly {
+    0% {
+      offset-distance: 0%;
+    }
+    100% {
+      offset-distance: 100%;
+    }
+  }
+  
+  .quote {
+    text-align: center;
+    color: white;
+    font-style: italic;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    width: 60%; 
+  }
+  
+  
+  header {
+    text-align: center;
+    padding: 100px;
+    color: white;
+  }
+  
+  .logo {
+    max-width: 200px;
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    width: 80px;
+  }
+  
+  
+  footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    padding: 0 20px; 
+  }
+  
+  
+  .icon {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .next-button:hover {
+    transform: scale(1.1);
+}
